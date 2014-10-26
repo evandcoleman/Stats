@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Evan Coleman. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "GraphViewController.h"
 
-@interface DetailViewController ()
+@interface GraphViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation GraphViewController
 
 #pragma mark - Managing the detail item
 
