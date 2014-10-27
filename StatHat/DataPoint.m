@@ -10,4 +10,20 @@
 
 @implementation DataPoint
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"time": @"time",
+             @"value": @"value",
+             };
+}
+
++ (NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
+    if ([key isEqualToString:@"time"]) {
+        return [MTLValueTransformer transformerWithBlock:^NSDate *(NSNumber *value) {
+            return [NSDate dateWithTimeIntervalSince1970:[value integerValue]];
+        }];
+    }
+    return nil;
+}
+
 @end

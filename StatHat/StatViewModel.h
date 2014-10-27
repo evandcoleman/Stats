@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @class Stat;
+@class APIClient;
+@class GraphViewModel;
 
 @interface StatViewModel : NSObject
 
 @property (nonatomic, readonly) NSString *name;
 
-- (instancetype)initWithStat:(Stat *)stat;
+- (instancetype)initWithStat:(Stat *)stat apiClient:(APIClient *)client;
+
+- (GraphViewModel *)graphViewModel;
 
 @end

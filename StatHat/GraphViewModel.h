@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class APIClient;
+@class Stat;
+
 @interface GraphViewModel : NSObject
+
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSArray *values;
+@property (nonatomic, readonly) NSArray *times;
+
+- (instancetype)initWithAPIClient:(APIClient *)client stat:(Stat *)stat;
 
 @end

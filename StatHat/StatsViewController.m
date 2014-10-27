@@ -11,6 +11,7 @@
 
 #import "StatsViewModel.h"
 #import "StatViewModel.h"
+#import "GraphViewModel.h"
 
 @interface StatsViewController ()
 
@@ -32,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"Stats";
     self.graphViewController = (GraphViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     [[RACObserve(self, viewModel.viewModels)
@@ -50,12 +52,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-//        GraphViewController *controller = (GraphViewController *)[[segue destinationViewController] topViewController];
-//        [controller setDetailItem:object];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        StatViewModel *statViewModel = self.viewModel.viewModels[indexPath.row];
+        
+        GraphViewController *graphController = (GraphViewController *)[[segue destinationViewController] topViewController];
+        graphController.viewModel = [statViewModel graphViewModel];
+        graphController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        graphController.navigationItem.leftItemsSupplementBackButton = YES;
     }
 }
 

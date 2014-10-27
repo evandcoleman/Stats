@@ -16,19 +16,21 @@
 
 @interface StatsViewModel ()
 
+@property (nonatomic) NSArray *viewModels;
+
 @end
 
 @implementation StatsViewModel
 
 - (instancetype)initWithAPIClient:(APIClient *)client {
     self = [super init];
-    if (self != nil) {
+    if (self != nil) {        
         RAC(self, viewModels) =
             [[client readStats]
                 map:^NSArray *(NSArray *stats) {
                     return [[stats.rac_sequence
                                 map:^StatViewModel *(Stat *stat) {
-                                    return [[StatViewModel alloc] initWithStat:stat];
+                                    return [[StatViewModel alloc] initWithStat:stat apiClient:client];
                                 }]
                                 array];
                 }];

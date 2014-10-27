@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <Overcoat/OVCHTTPSessionManager.h>
 
+@class Stat;
+
 @interface APIClient : OVCHTTPSessionManager
 
 - (RACSignal *)readStats;
+
+- (RACSignal *)readDataPoints:(Stat *)stat;
 
 @end

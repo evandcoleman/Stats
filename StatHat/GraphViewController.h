@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class GraphViewModel;
+
 @interface GraphViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (nonatomic) GraphViewModel *viewModel;
 
 @end
 

@@ -18,10 +18,10 @@
 		200D782719FDC06000DFCBB5 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D782619FDC06000DFCBB5 /* APIClient.m */; };
 		200D782C19FDC08A00DFCBB5 /* Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D782B19FDC08A00DFCBB5 /* Stat.m */; };
 		200D783219FDC0DE00DFCBB5 /* StatViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D783119FDC0DE00DFCBB5 /* StatViewModel.m */; };
-		200D783519FDC0E800DFCBB5 /* DataPointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D783419FDC0E800DFCBB5 /* DataPointViewModel.m */; };
 		200D783819FDC0F100DFCBB5 /* StatsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D783719FDC0F100DFCBB5 /* StatsViewModel.m */; };
-		200D783B19FDC10000DFCBB5 /* GraphViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D783A19FDC10000DFCBB5 /* GraphViewModel.m */; };
 		2019E18B19FDC223007202C7 /* DataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2019E18A19FDC223007202C7 /* DataPoint.m */; };
+		2019E19219FDDBEA007202C7 /* GraphViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2019E19119FDDBEA007202C7 /* GraphViewModel.m */; };
+		2019E19519FDDC01007202C7 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = 2019E19419FDDC01007202C7 /* Graph.m */; };
 		2D54C57D23CEF04E83EAC15D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3640A20BF9B2E7DE23EEAE27 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,14 +59,14 @@
 		200D782B19FDC08A00DFCBB5 /* Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stat.m; sourceTree = "<group>"; };
 		200D783019FDC0DE00DFCBB5 /* StatViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatViewModel.h; sourceTree = "<group>"; };
 		200D783119FDC0DE00DFCBB5 /* StatViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewModel.m; sourceTree = "<group>"; };
-		200D783319FDC0E800DFCBB5 /* DataPointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPointViewModel.h; sourceTree = "<group>"; };
-		200D783419FDC0E800DFCBB5 /* DataPointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPointViewModel.m; sourceTree = "<group>"; };
 		200D783619FDC0F100DFCBB5 /* StatsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewModel.h; sourceTree = "<group>"; };
 		200D783719FDC0F100DFCBB5 /* StatsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewModel.m; sourceTree = "<group>"; };
-		200D783919FDC10000DFCBB5 /* GraphViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewModel.h; sourceTree = "<group>"; };
-		200D783A19FDC10000DFCBB5 /* GraphViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewModel.m; sourceTree = "<group>"; };
 		2019E18919FDC223007202C7 /* DataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPoint.h; sourceTree = "<group>"; };
 		2019E18A19FDC223007202C7 /* DataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPoint.m; sourceTree = "<group>"; };
+		2019E19019FDDBEA007202C7 /* GraphViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewModel.h; sourceTree = "<group>"; };
+		2019E19119FDDBEA007202C7 /* GraphViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewModel.m; sourceTree = "<group>"; };
+		2019E19319FDDC01007202C7 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		2019E19419FDDC01007202C7 /* Graph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph.m; sourceTree = "<group>"; };
 		3640A20BF9B2E7DE23EEAE27 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D49E0CB35C9C8C580D9BDA0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +180,8 @@
 				2019E18C19FDD3FA007202C7 /* Responses */,
 				200D782A19FDC08A00DFCBB5 /* Stat.h */,
 				200D782B19FDC08A00DFCBB5 /* Stat.m */,
+				2019E19319FDDC01007202C7 /* Graph.h */,
+				2019E19419FDDC01007202C7 /* Graph.m */,
 				2019E18919FDC223007202C7 /* DataPoint.h */,
 				2019E18A19FDC223007202C7 /* DataPoint.m */,
 			);
@@ -191,12 +193,10 @@
 			children = (
 				200D783619FDC0F100DFCBB5 /* StatsViewModel.h */,
 				200D783719FDC0F100DFCBB5 /* StatsViewModel.m */,
-				200D783919FDC10000DFCBB5 /* GraphViewModel.h */,
-				200D783A19FDC10000DFCBB5 /* GraphViewModel.m */,
 				200D783019FDC0DE00DFCBB5 /* StatViewModel.h */,
 				200D783119FDC0DE00DFCBB5 /* StatViewModel.m */,
-				200D783319FDC0E800DFCBB5 /* DataPointViewModel.h */,
-				200D783419FDC0E800DFCBB5 /* DataPointViewModel.m */,
+				2019E19019FDDBEA007202C7 /* GraphViewModel.h */,
+				2019E19119FDDBEA007202C7 /* GraphViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -360,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2019E19519FDDC01007202C7 /* Graph.m in Sources */,
 				200D782719FDC06000DFCBB5 /* APIClient.m in Sources */,
 				200D783819FDC0F100DFCBB5 /* StatsViewModel.m in Sources */,
 				2019E18B19FDC223007202C7 /* DataPoint.m in Sources */,
@@ -369,8 +370,7 @@
 				200D77FC19FDBD4E00DFCBB5 /* main.m in Sources */,
 				200D780519FDBD4E00DFCBB5 /* GraphViewController.m in Sources */,
 				200D782C19FDC08A00DFCBB5 /* Stat.m in Sources */,
-				200D783B19FDC10000DFCBB5 /* GraphViewModel.m in Sources */,
-				200D783519FDC0E800DFCBB5 /* DataPointViewModel.m in Sources */,
+				2019E19219FDDBEA007202C7 /* GraphViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

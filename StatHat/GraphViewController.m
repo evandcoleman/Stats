@@ -8,39 +8,54 @@
 
 #import "GraphViewController.h"
 
-@interface GraphViewController ()
+#import "GraphViewModel.h"
+
+#import <GraphKit/GraphKit.h>
+
+@interface GraphViewController () <GKLineGraphDataSource>
+
+@property (nonatomic, weak) IBOutlet GKLineGraph *graphView;
 
 @end
 
 @implementation GraphViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-            
-        // Update the view.
-        [self configureView];
-    }
-}
-
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    
+    self.graphView.dataSource = self;
+    self.graphView.lineWidth = 3.0;
+
+    RAC(self, title) = RACObserve(self, viewModel.title);
+    
+    [[[RACSignal merge:@[[RACObserve(self, viewModel.values) ignore:nil], [RACObserve(self, viewModel.times) ignore:nil]]]
+        mapReplace:self.graphView]
+        subscribeNext:^(GKLineGraph *graphView) {
+            [graphView draw];
+        }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+}
+
+#pragma mark GKLineGraphDataSource
+
+- (NSInteger)numberOfLines {
+    return 1;
+}
+
+- (UIColor *)colorForLineAtIndex:(NSInteger)index {
+    return [UIColor greenColor];
+}
+
+- (NSArray *)valuesForLineAtIndex:(NSInteger)index {
+    return self.viewModel.values;
+}
+
+- (NSString *)titleForLineAtIndex:(NSInteger)index {
+    return self.viewModel.title;
 }
 
 @end
