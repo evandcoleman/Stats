@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class StatsViewModel;
+
 @interface StatsViewController : UITableViewController
+
+@property (nonatomic) StatsViewModel *viewModel;
 
 @end
 

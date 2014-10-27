@@ -7,7 +7,13 @@
 //
 
 #import "AppDelegate.h"
+
+#import "StatsViewController.h"
 #import "GraphViewController.h"
+
+#import "StatsViewModel.h"
+
+#import "APIClient.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -20,6 +26,12 @@
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    StatsViewController *statsViewController = (StatsViewController *)[[[splitViewController viewControllers] firstObject] topViewController];
+    
+    APIClient *client = [[APIClient alloc] init];
+    StatsViewModel *statsViewModel = [[StatsViewModel alloc] initWithAPIClient:client];
+    statsViewController.viewModel = statsViewModel;
+    
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     return YES;

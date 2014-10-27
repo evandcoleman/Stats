@@ -1,0 +1,16 @@
+//
+//  StatHat-Prefix.pch
+//  StatHat
+//
+//  Created by Evan Coleman on 10/26/14.
+//  Copyright (c) 2014 Evan Coleman. All rights reserved.
+//
+
+#ifndef StatHat_StatHat_Prefix_pch
+#define StatHat_StatHat_Prefix_pch
+
+#import <AFNetworking/AFNetworking.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <EXTScope.h>
+
+#endif

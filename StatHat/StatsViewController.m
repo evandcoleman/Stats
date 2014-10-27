@@ -9,6 +9,9 @@
 #import "StatsViewController.h"
 #import "GraphViewController.h"
 
+#import "StatsViewModel.h"
+#import "StatViewModel.h"
+
 @interface StatsViewController ()
 
 @property (nonatomic) GraphViewController *graphViewController;
@@ -30,6 +33,12 @@
     [super viewDidLoad];
 
     self.graphViewController = (GraphViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    [[RACObserve(self, viewModel.viewModels)
+        mapReplace:self.tableView]
+        subscribeNext:^(UITableView *tableView) {
+            [tableView reloadData];
+        }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,14 +66,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [self.viewModel.viewModels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StatCell" forIndexPath:indexPath];
 
-//    NSDate *object = self.objects[indexPath.row];
-//    cell.textLabel.text = [object description];
+    StatViewModel *statViewModel = self.viewModel.viewModels[indexPath.row];
+    cell.textLabel.text = statViewModel.name;
+    
     return cell;
 }
 
