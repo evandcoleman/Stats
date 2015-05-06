@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200205F71AFACCFB004D048F /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 200205F61AFACCFB004D048F /* APIClient.m */; };
 		200D77FC19FDBD4E00DFCBB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D77FB19FDBD4E00DFCBB5 /* main.m */; };
 		200D77FF19FDBD4E00DFCBB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D77FE19FDBD4E00DFCBB5 /* AppDelegate.m */; };
 		200D780219FDBD4E00DFCBB5 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D780119FDBD4E00DFCBB5 /* StatsViewController.m */; };
@@ -15,7 +16,6 @@
 		200D780A19FDBD4E00DFCBB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200D780919FDBD4E00DFCBB5 /* Images.xcassets */; };
 		200D780D19FDBD4E00DFCBB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200D780B19FDBD4E00DFCBB5 /* LaunchScreen.xib */; };
 		200D781919FDBD4E00DFCBB5 /* StatHatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D781819FDBD4E00DFCBB5 /* StatHatTests.m */; };
-		200D782719FDC06000DFCBB5 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D782619FDC06000DFCBB5 /* APIClient.m */; };
 		200D782C19FDC08A00DFCBB5 /* Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D782B19FDC08A00DFCBB5 /* Stat.m */; };
 		200D783219FDC0DE00DFCBB5 /* StatViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D783119FDC0DE00DFCBB5 /* StatViewModel.m */; };
 		200D783819FDC0F100DFCBB5 /* StatsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 200D783719FDC0F100DFCBB5 /* StatsViewModel.m */; };
@@ -37,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0B99A17A98ADF9014D1F8F93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		200205F61AFACCFB004D048F /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		200D77F619FDBD4E00DFCBB5 /* StatHat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatHat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		200D77FA19FDBD4E00DFCBB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		200D77FB19FDBD4E00DFCBB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		200D781819FDBD4E00DFCBB5 /* StatHatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatHatTests.m; sourceTree = "<group>"; };
 		200D782219FDBF3D00DFCBB5 /* StatHat-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StatHat-Prefix.pch"; sourceTree = "<group>"; };
 		200D782519FDC06000DFCBB5 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
-		200D782619FDC06000DFCBB5 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		200D782A19FDC08A00DFCBB5 /* Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stat.h; sourceTree = "<group>"; };
 		200D782B19FDC08A00DFCBB5 /* Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stat.m; sourceTree = "<group>"; };
 		200D783019FDC0DE00DFCBB5 /* StatViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatViewModel.h; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				200D782519FDC06000DFCBB5 /* APIClient.h */,
-				200D782619FDC06000DFCBB5 /* APIClient.m */,
+				200205F61AFACCFB004D048F /* APIClient.m */,
 			);
 			name = "Data Sources";
 			sourceTree = "<group>";
@@ -361,11 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2019E19519FDDC01007202C7 /* Graph.m in Sources */,
-				200D782719FDC06000DFCBB5 /* APIClient.m in Sources */,
 				200D783819FDC0F100DFCBB5 /* StatsViewModel.m in Sources */,
 				2019E18B19FDC223007202C7 /* DataPoint.m in Sources */,
 				200D783219FDC0DE00DFCBB5 /* StatViewModel.m in Sources */,
 				200D77FF19FDBD4E00DFCBB5 /* AppDelegate.m in Sources */,
+				200205F71AFACCFB004D048F /* APIClient.m in Sources */,
 				200D780219FDBD4E00DFCBB5 /* StatsViewController.m in Sources */,
 				200D77FC19FDBD4E00DFCBB5 /* main.m in Sources */,
 				200D780519FDBD4E00DFCBB5 /* GraphViewController.m in Sources */,
